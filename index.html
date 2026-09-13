@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #12000b, #3b001f, #18000e);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 22px;
+    animation: float 7s linear infinite;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 0.8; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Opening */
+.hero h1 {
+    font-size: clamp(45px, 10vw, 90px);
+    color: #ff6fae;
+    text-shadow: 0 0 25px #ff1f75;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff1f75; }
+    to { text-shadow: 0 0 40px #ff1f75; }
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 15px;
+    color: #ffd6e8;
+}
+
+button {
+    margin-top: 30px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #ff3f86;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff3f86;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+/* Love letter */
+.card {
+    max-width: 750px;
+    padding: 35px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 40px rgba(255,50,130,0.2);
+}
+
+h2 {
+    font-size: 42px;
+    color: #ff72ae;
+    margin-bottom: 25px;
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #ffe5ef;
+}
+
+/* Reasons */
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.reason {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    transition: 0.3s;
+}
+
+.reason:hover {
+    transform: translateY(-10px);
+    background: rgba(255,70,140,0.18);
+}
+
+.reason span {
+    font-size: 35px;
+}
+
+.reason p {
+    margin-top: 12px;
+}
+
+/* Photo */
+.photo-box {
+    width: min(350px, 85vw);
+    height: 430px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 35px #ff357e;
+    margin-bottom: 25px;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Surprise */
+#surpriseMessage {
+    display: none;
+    margin-top: 25px;
+    font-size: 22px;
+    color: #ffd0e3;
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+/* Final */
+.final h2 {
+    font-size: clamp(40px, 8vw, 75px);
+}
+
+.final p {
+    font-size: 20px;
+    color: #ffd5e6;
+}
+
+/* Music button */
+.music {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    margin: 0;
+    padding: 10px 16px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background music -->
+<audio id="music" loop>
+    <!-- Replace this with your own music file -->
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" onclick="toggleMusic()">🎵 Music</button>
+
+<!-- Opening -->
+<section class="hero">
+    <h1>Happy Birthday </h1>
+    <p>To the most beautiful person...</p>
+
+    <button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
+        Open Your Surprise 💌
+    </button>
+</section>
+
+<!-- Love Letter -->
+<section id="letter">
+    <div class="card">
+        <h2>Dear💕</h2>
+
+        <p>
+            Today is not just your birthday.
+            Today is the day the world became a little more beautiful
+            because you were born.
+            <br><br>
+
+        
+
+            Your smile makes my bad days better.
+            Your presence makes ordinary moments special.
+            
+            <br><br>
+
+            Happy Birthday 
+            I hope this year brings you everything your heart wishes for.
+            And I hope I get to be beside you through all of it.
+        </p>
+    </div>
+</section>
+
+<!-- Memory -->
+<section>
+    <h2>The Butterfly </h2>
+
+    <div class="photo-box">
+        <!-- Replace love.jpg with your photo -->
+        <img src="image.jpg.jpeg" alt="Our Memory">
+    </div>
+
+    <p>
+        The Butterfly
+    </p>
+</section>
+
+<!-- Reasons -->
+<section>
+    <h2>Why I Like You ❤️</h2>
+
+    <div class="reasons">
+
+        <div class="reason">
+            <span>😊</span>
+            <p>Your smile makes everything better.</p>
+        </div>
+
+        <div class="reason">
+            <span>❤️</span>
+            <p>You make me feel loved and understood.</p>
+        </div>
+
+        <div class="reason">
+            <span>✨</span>
+            <p>You make ordinary moments magical.</p>
+        </div>
+
+        <div class="reason">
+            <span>🫶</span>
+            <p>You are someone I never want to lose.</p>
+        </div>
+
+        <div class="reason">
+            <span>🌙</span>
+            <p>You make even my darkest days brighter.</p>
+        </div>
+
+        <div class="reason">
+            <span>💍</span>
+            <p>Because with you, everything feels right.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Surprise -->
+<section>
+    <h2>One Last Surprise 🎁</h2>
+
+    <button onclick="showSurprise()">
+        Don't Click This 😏
+    </button>
+
+    <div id="surpriseMessage">
+        If you clicked it anyway... 😌
+        <br><br>
+
+        Here's my little secret:
+        <br>
+        <strong>
+            I want to create thousands of beautiful memories
+            with you.
+        </strong>
+
+        <br><br>
+
+        Happy Birthday, my butterfly ❤️
+        <br>
+        You mean more to me than anithing.
+    </div>
+</section>
+
+<!-- Final -->
+<section class="final">
+    <h2>I will always have your back</h2>
+
+    <p>
+        Today, tomorrow, and all the days that come after.
+    </p>
+
+    <p style="margin-top:30px;">
+        Happy Birthday, Butterfly 🎂💕
+    </p>
+</section>
+
+<script>
+
+/* Floating hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+setInterval(createHeart, 500);
+
+/* Surprise */
+function showSurprise() {
+    document.getElementById("surpriseMessage").style.display = "block";
+}
+
+/* Music */
+let playing = false;
+
+function toggleMusic() {
+    const music = document.getElementById("music");
+
+    if (playing) {
+        music.pause();
+        playing = false;
+    } else {
+        music.play();
+        playing = true;
+    }
+}
+
+</script>
+
+</body>
+</html>
